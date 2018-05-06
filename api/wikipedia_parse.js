@@ -4,7 +4,7 @@ const request = require('superagent');
 const cheerio = require('cheerio');
 
 
-const endpoint = 'https://en.wikipedia.org/w/api.php';
+const endpoint = 'https://zh.wikipedia.org/w/api.php';
 
 /**
 Get the title of a page from a URL quickly,but inaccurately. Allows both for URLs with a trailing

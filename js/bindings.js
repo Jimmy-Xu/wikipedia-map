@@ -24,7 +24,7 @@ function openPageEvent (params) {
   if (params.nodes.length) {
     var nodeid = params.nodes[0];
     var page = encodeURIComponent(unwrap(nodes.get(nodeid).label));
-    var url = "http://en.wikipedia.org/wiki/"+page;
+    var url = "http://zh.wikipedia.org/wiki/"+page;
     window.open(url, '_blank');
   }
 }

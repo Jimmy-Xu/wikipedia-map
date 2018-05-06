@@ -12,3 +12,8 @@ dev
 graphs/*.json
 
 node_modules
+
+.idea
+wikipedia-map.iml
+api/node_modules
+

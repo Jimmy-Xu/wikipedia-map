@@ -22,6 +22,7 @@ app.use(function(req, res, next) {
 
 app.get('/links', (req, res) => {
   const page = req.query.page;
+  console.log("/links",page);
   wp.getPageHtml(page)
     .then(wp.getFirstParagraph)
     .then(wp.getWikiLinks)
@@ -30,6 +31,7 @@ app.get('/links', (req, res) => {
 
 app.get('/pagename', (req, res) => {
   const page = req.query.page;
+  console.log("/pagename",page);
   wp.getPageName(page)
     .then(name => res.send(`"${name}"`));
 });
@@ -37,12 +39,14 @@ app.get('/pagename', (req, res) => {
 app.get('/random', (req, res) => {
   wp.getRandomArticle()
     .then(page => res.send(page));
+  console.log("/random",page);
 });
 
 app.get('/suggest', (req, res) => {
   const text = req.query.text;
   wp.getSuggestions(text)
     .then(suggestions => res.send(suggestions));
+  console.log("/suggest",suggestions);
 });
 
 
@@ -53,5 +57,5 @@ app.post('/storejson', (req, res) => {});
 
 // Run
 
-
+console.log("start api server on 3000");
 app.listen(3000, '0.0.0.0');
